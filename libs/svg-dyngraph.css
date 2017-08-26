@@ -1,0 +1,19 @@
+svg .axis line, svg .axis path {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+svg .ticks text {
+    fill: black;
+}
+
+svg path.plot {
+    fill: none;
+    stroke: blue;
+}
+
+svg circle.scatter {
+    stroke: black;
+    stroke-width: 3;
+    fill: none;
+}

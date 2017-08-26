@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hansa game</title>
+<link rel="stylesheet" type="text/css" href="hansa.css">
+</head>
+
+<body>
+
+<div class="wrap">
+<svg width="700" height="275" />
+
+<!-- I wanted to use display:inline-block, but it was being too much of
+     a pain. Now it's tables all the way down... -->
+
+<div class="colcity">
+    <p class="citylabel" id="cityA">City A</p>
+    <table>
+        <tr>
+            <td class="label" id="lutilityA">Utility:</td>
+            <td class="showutility" id="utilityA">0</td> 
+        </tr>
+        <tr>
+            <td class="label" id="lprod1A">Bread:</td>
+            <td class="value" id="prod1A"><span id="value1A">0</span><span class="maxvalue"> (<span id="maxprod1A">0</span>)</span></td>
+        </tr>
+        <tr>
+            <td class="label" id="lprod2A">Wine:</td>
+            <td class="value" id="prod2A"><span id="value2A">0</span><span class="maxvalue"> (<span id="maxprod2A">0</span>)</span></td>
+        </tr>
+    </table>
+</div>
+<div class="coltrade">
+    <div class="centertrade">
+        <p id="ltrade" class="citylabel">Trade</p>
+        <div class="proposebox">
+            <p id="feedback" class="proposedesc">Clicking this button will end your turn.</p>
+            <button id="propose" onclick="propose()">Propose</button>
+        </div>
+        <div class="rangebox">
+            <span id="input0A" class="linput0">0</span>
+            <input type="range" id="trade1" min="0" max="50" value="0" onchange="tradeChanged(0, this.value)" disabled />
+            <span id="input0B" class="linput1">0</span>
+        </div>
+        <div class="rangebox">
+            <span id="input1A" class="linput0">0</span>
+            <input type="range" id="trade2" min="0" max="50" value="0" onchange="tradeChanged(1, this.value)" disabled />
+            <span id="input1B"class="linput1">0</span>
+        </div>
+    </div>
+</div>
+<div class="colcity">
+    <p class="citylabel" id="cityB">City B</p>
+    <table>
+        <tr>
+            <td class="label" id="lutilityB">Utility:</td>
+            <td class="showutility" id="utilityB">0</td> 
+        </tr>
+        <tr>
+            <td class="label" id="lprod1B">Bread:</td>
+            <td class="value" id="prod1B"><span id="value1B">0</span><span class="maxvalue"> (<span id="maxprod1B">0</span>)</span></td>
+        </tr>
+        <tr>
+            <td class="label" id="lprod2B">Wine:</td>
+            <td class="value" id="prod2B"><span id="value2B">0</span><span class="maxvalue"> (<span id="maxprod2B">0</span>)</span></td>
+        </tr>
+    </table>
+</div>
+
+<div id="turn">> It's your turn.</div>
+
+<p class="text">The idea behind this game is in presenting the concept of comparative advantage. The concept was first introduced by David Ricardo, the son of Portuguese jewish refugees in Britain at a time when people were afraid free trade would mean Portugal would completely dominate England in trade. David Ricardo showed, together with a numerical example, how both Portugal and England could benefit from trade.</p>
+</div>
+
+<script src="../libs/d3.v4.min.js"></script>
+<script src="city.js"></script>
+<script src="ai.js"></script>
+<script src="hansa.js"></script>
+</body>
+</html>

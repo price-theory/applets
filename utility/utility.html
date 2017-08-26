@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Utility game</title>
+<link rel="stylesheet" href="../libs/katex/katex.min.css">
+<link rel="stylesheet" href="../libs/svg-ui.css">
+<link rel="stylesheet" href="../libs/svg-dyngraph.css">
+<link rel="stylesheet" href="utility.css">
+</head>
+
+<body>
+
+<div id="container">
+<svg width="400" height="400"></svg>
+
+<table>
+<tr><td>Money:</td><td id="money">$100</td></tr>
+<tr><td>Utility:</td><td id="utility">0</td></tr>
+<tr><td>Bread:</td><td><input id="good1" class="good" type="range" value="0" min="0" max="100" /></td><td id="good1-value">0</td></tr>
+<tr><td>Wine:</td><td><input id="good2" class="good" type="range" value="0" min="0" max="100" /></td><td id="good2-value">0</td></tr>
+</table>
+
+<p>Both bread and wine cost $1. But the pleasure obtained from each may differ, as modeled by</p>
+<div id="eq"></div>
+
+<p>You are unaware of the values of alpha. But notice how wine gives a big utility boost, but it quickly reaches diminishing returns. To reach utility=1, you must balance your consumption.</p>
+</div>
+
+<script src="../libs/katex/katex.min.js"></script>
+<script src="../libs/d3.v4.min.js"></script>
+<script src="../libs/econ.utility.js"></script>
+<script src="../libs/svg-dyngraph.js"></script>
+<script src="../libs/vec.js"></script>
+<script src="utility.js"></script>
+</body>
+</html>
